@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "json:server": "json-server --watch db.json"
+    "start": "json-server --watch -p 3001 db.json",
+    "generate": "node ./fakeData.js > ./db.json"
   },
   "author": "",
   "license": "ISC",
