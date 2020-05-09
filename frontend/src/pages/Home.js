@@ -4,7 +4,7 @@ import { Button, Jumbotron, Container } from 'react-bootstrap';
 function Home() {
   return (
     <div>
-      <Jumbotron fluid>
+      <Jumbotron fluid className="mt-3">
         <Container>
           <h1>My Log</h1>
           <p>Check out your catch log.</p>

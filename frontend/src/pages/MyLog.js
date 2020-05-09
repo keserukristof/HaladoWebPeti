@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Table } from 'react-bootstrap';
 import TableElement from '../components/communityLog/TableElement';
-import MyLogForm from '../components/myLog/MyLogForm'
+import MyLogForm from '../components/myLog/MyLogForm';
 import axios from 'axios';
 
 export class MyLog extends Component {
@@ -22,8 +22,15 @@ export class MyLog extends Component {
   render() {
     return (
       <div>
-        <MyLogForm/>
-        <Table striped bordered hover variant='dark' className="mt-3">
+        <MyLogForm
+          onSubmit={(submission) => {
+            this.setState({
+              catches: [...this.state.catches, submission],
+            });
+            console.log(this.state.catches)
+          }}
+        />
+        <Table striped bordered hover variant='dark' className='mt-3'>
           <thead>
             <tr>
               <th>ID</th>
