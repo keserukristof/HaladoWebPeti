@@ -30,16 +30,43 @@ let techniques = [
   'Kontiki Fishing',
 ];
 
+let caughtFish = ['Catla', 'Cat shark', 'Flagfin', 'Flagfish', 'Shark', 'Pacific cod'];
+
+let lake = [
+  'Lake Velencei',
+  'Lake Hévíz',
+  'Lake Vadkert',
+  'Woodland Flowage',
+  'Grand Falls Flowage',
+];
+
 for (let i = 1; i <= 100; i++) {
   database.catches.push({
     id: i,
     name: faker.name.firstName() + ' ' + faker.name.lastName(),
     equipment: faker.lorem.word,
-    bait: baits[faker.random.number({ min: 0, max: baits.length })],
+    bait: baits[faker.random.number({ min: 0, max: baits.length - 1 })],
     fishong_pole:
-      fishong_poles[faker.random.number({ min: 0, max: fishong_poles.length })],
+      fishong_poles[faker.random.number({ min: 0, max: fishong_poles.length - 1 })],
     preferred_technique:
-      techniques[faker.random.number({ min: 0, max: techniques.length })],
+      techniques[faker.random.number({ min: 0, max: techniques.length - 1 })],
+    caughtFish: caughtFish[faker.random.number({ min: 0, max: caughtFish.length - 1 })],
+    lake: lake[faker.random.number({ min: 0, max: lake.length - 1 })],
+  });
+}
+
+for (let i = 1; i <= 20; i++) {
+  database.catches.push({
+    id: 101,
+    name: 'Matt Smith',
+    equipment: faker.lorem.word,
+    bait: baits[faker.random.number({ min: 0, max: baits.length - 1 })],
+    fishong_pole:
+      fishong_poles[faker.random.number({ min: 0, max: fishong_poles.length - 1 })],
+    preferred_technique:
+      techniques[faker.random.number({ min: 0, max: techniques.length - 1 })],
+    caughtFish: caughtFish[faker.random.number({ min: 0, max: caughtFish.length - 1 })],
+    lake: lake[faker.random.number({ min: 0, max: lake.length - 1 })],
   });
 }
 
