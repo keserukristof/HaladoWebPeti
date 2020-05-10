@@ -3,15 +3,19 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 class MyLogForm extends React.Component {
-  state = {
-    id: '101',
-    name: 'Matt Smith',
-    bait: '',
-    fishong_pole: '',
-    preferred_technique: '',
-    caughtFish: '',
-    lake: '',
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: '101',
+      name: 'Matt Smith',
+      bait: '',
+      fishong_pole: '',
+      preferred_technique: '',
+      caughtFish: '',
+      lake: '',
+    };
+    this.change = this.change.bind(this);
+  }
 
   change = (e) => {
     this.setState({
@@ -23,11 +27,11 @@ class MyLogForm extends React.Component {
     e.preventDefault();
     this.props.onSubmit(this.state);
     this.setState({
-        bait: '',
-        fishong_pole: '',
-        preferred_technique: '',
-        caughtFish: '',
-        lake: '',
+      bait: '',
+      fishong_pole: '',
+      preferred_technique: '',
+      caughtFish: '',
+      lake: '',
     });
   };
 
