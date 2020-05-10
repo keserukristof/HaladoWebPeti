@@ -2,23 +2,8 @@ import React, { Component } from 'react';
 import { Table } from 'react-bootstrap';
 import TableElement from '../components/communityLog/TableElement';
 import MyLogForm from '../components/myLog/MyLogForm';
-import axios from 'axios';
 
 export class MyLog extends Component {
-  constructor() {
-    super();
-    this.state = {
-      catches: [],
-    };
-  }
-
-  componentDidMount() {
-    axios.get('http://localhost:3001/catches?id=101').then((res) => {
-      console.log(res.data);
-      this.setState({ catches: res.data });
-    });
-  }
-
   render() {
     return (
       <div>
