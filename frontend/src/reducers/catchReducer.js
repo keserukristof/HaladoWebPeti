@@ -10,7 +10,12 @@ export default function (state = initialState, action) {
     case FETCH_CATCHES:
       return {
         ...state,
-        items: action.payload
+        items: action.payload,
+      };
+    case NEW_CATCH:
+      return {
+        ...state,
+        item: action.payload,
       };
     default:
       return state;
