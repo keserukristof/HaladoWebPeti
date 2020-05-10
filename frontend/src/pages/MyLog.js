@@ -1,9 +1,17 @@
-import React, { Component } from 'react';
-import { Table } from 'react-bootstrap';
-import TableElement from '../components/communityLog/TableElement';
-import MyLogForm from '../components/myLog/MyLogForm';
+import { Table } from "react-bootstrap";
+import TableElement from "../components/comunityLogs/TableElement";
+import MyLogForm from "../components/myLog/MyLogForm";
+import { connect } from 'react-redux';
+import { fetchCatches } from '../actions/catchActions'
+
+import React, { Component } from "react";
 
 export class MyLog extends Component {
+
+  componentDidMount() {
+    this.props.fetchCatches();
+  }
+
   render() {
     return (
       <div>
@@ -12,30 +20,29 @@ export class MyLog extends Component {
             this.setState({
               catches: [...this.state.catches, submission],
             });
-            console.log(this.state.catches)
           }}
         />
-        <Table striped bordered hover variant='dark' className='mt-3'>
+        <Table striped bordered hover variant="dark" className="mt-3">
           <thead>
             <tr>
               <th>ID</th>
               <th>Name</th>
               <th>Bait</th>
-              <th>Fishong pole</th>
-              <th>Preferred technique</th>
+              <th>Fisshing pole</th>
+              <th>Preferred Technique</th>
               <th>Caught fish</th>
               <th>Lake</th>
             </tr>
           </thead>
           <tbody>
-            {this.state.catches.map((actualCatch) => (
+            {this.props.catches.map((actualCatch) => (
               <TableElement
                 id={actualCatch.id}
                 name={actualCatch.name}
                 bait={actualCatch.bait}
-                fishing_pole={actualCatch.fishong_pole}
+                fishing_pole={actualCatch.fishing_pole}
                 preferred_technique={actualCatch.preferred_technique}
-                caughtFish={actualCatch.caughtFish}
+                caugthFish={actualCatch.caugthFish}
                 lake={actualCatch.lake}
               />
             ))}
@@ -46,4 +53,8 @@ export class MyLog extends Component {
   }
 }
 
-export default MyLog;
+const mapStateToProps = state => ({
+  catches: state.catches.items,
+});
+
+export default connect(mapStateToProps, { fetchCatches })(MyLog);

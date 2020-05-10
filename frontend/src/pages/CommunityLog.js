@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import { Table } from 'react-bootstrap';
-import TableElement from '../components/communityLog/TableElement';
-import axios from 'axios';
+import { Table } from "react-bootstrap";
+import TableElement from "../components/comunityLogs/TableElement";
+import axios from "axios";
+
+import React, { Component } from "react";
 
 export class CommunityLog extends Component {
   constructor() {
@@ -12,7 +13,7 @@ export class CommunityLog extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3001/catches').then((res) => {
+    axios.get("http://localhost:3001/catches").then((res) => {
       console.log(res.data);
       this.setState({ catches: res.data });
     });
@@ -20,14 +21,14 @@ export class CommunityLog extends Component {
 
   render() {
     return (
-      <Table striped bordered hover variant='dark' className="mt-3">
+      <Table striped bordered hover variant="dark" className="mt-3">
         <thead>
           <tr>
             <th>ID</th>
             <th>Name</th>
             <th>Bait</th>
-            <th>Fishong pole</th>
-            <th>Preferred technique</th>
+            <th>Fisshing pole</th>
+            <th>Preferred Technique</th>
             <th>Caught fish</th>
             <th>Lake</th>
           </tr>
@@ -38,9 +39,9 @@ export class CommunityLog extends Component {
               id={actualCatch.id}
               name={actualCatch.name}
               bait={actualCatch.bait}
-              fishing_pole={actualCatch.fishong_pole}
+              fishing_pole={actualCatch.fishing_pole}
               preferred_technique={actualCatch.preferred_technique}
-              caughtFish={actualCatch.caughtFish}
+              caugthFish={actualCatch.caugthFish}
               lake={actualCatch.lake}
             />
           ))}

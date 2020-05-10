@@ -1,24 +1,24 @@
-import React from 'react';
-import { Button, Jumbotron, Container } from 'react-bootstrap';
+import React from "react";
+import { Button, Jumbotron, Container } from "react-bootstrap";
 
 function Home() {
   return (
     <div>
-      <Jumbotron fluid className="mt-3">
+      <Jumbotron fluid>
         <Container>
           <h1>My Log</h1>
-          <p>Check out your catch log.</p>
+          <p>Check out from your cath log</p>
           <p>
-            <Button href="/my-log">Go to the page</Button>
+            <Button href="/my-log" variant="primary">Go to</Button>
           </p>
         </Container>
       </Jumbotron>
       <Jumbotron fluid>
         <Container>
           <h1>Community Log</h1>
-          <p>Check out the community log.</p>
+          <p>Check out from communnity log</p>
           <p>
-            <Button href="/community-log">Go to the page</Button>
+            <Button href="/community-log" variant="primary">Go to</Button>
           </p>
         </Container>
       </Jumbotron>

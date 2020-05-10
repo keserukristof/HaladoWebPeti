@@ -1,4 +1,5 @@
 import { FETCH_CATCHES, NEW_CATCH } from './types';
+import axios from 'axios';
 
 export const fetchCatches = () => dispatch => {
   //HA VALAMI ELBASZÓDIK EZT NÉZD MEG ELŐSZÖR!!!!

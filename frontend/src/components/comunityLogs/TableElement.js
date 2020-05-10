@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 function TableElement(props) {
   return (
@@ -8,7 +8,7 @@ function TableElement(props) {
       <td>{props.bait}</td>
       <td>{props.fishing_pole}</td>
       <td>{props.preferred_technique}</td>
-      <td>{props.caughtFish}</td>
+      <td>{props.caugthFish}</td>
       <td>{props.lake}</td>
     </tr>
   );

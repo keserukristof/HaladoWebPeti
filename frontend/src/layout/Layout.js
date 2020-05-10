@@ -1,12 +1,8 @@
-import React from 'react';
-import { Container } from 'react-bootstrap'
+import React from "react";
+import { Container } from "react-bootstrap";
 
-function Layout(props) {
-  return (
-    <Container>
-      {props.children}
-    </Container>
-  )
-}
+function Layout (props) {
+  return <Container>{props.children}</Container>;
+};
 
-export default Layout
+export default Layout;
