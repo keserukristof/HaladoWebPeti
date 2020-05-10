@@ -25,7 +25,7 @@ export class MyLog extends Component {
         <Table striped bordered hover variant="dark" className="mt-3">
           <thead>
             <tr>
-              <th>ID</th>
+              <th>User ID</th>
               <th>Name</th>
               <th>Bait</th>
               <th>Fisshing pole</th>
@@ -37,7 +37,7 @@ export class MyLog extends Component {
           <tbody>
             {this.props.catches.map((actualCatch) => (
               <TableElement
-                id={actualCatch.id}
+                uid={actualCatch.uid}
                 name={actualCatch.name}
                 bait={actualCatch.bait}
                 fishing_pole={actualCatch.fishing_pole}
